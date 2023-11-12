@@ -24,25 +24,23 @@ void menu()
 {
 	int choice = 0;
 	int k = 0;
-	cout << "Input the length of containers" << endl;
-	cin >> k;
 	cls();
 	//тут будет объект класса
 	k = 0;
 	men();
 	//вывод в консоль
-	while (choice != 6)
+	while (choice != 3)
 	{
 		cin >> choice;
 		cls();
 		switch (choice)
 		{
-		case 1: //////////////////////////////Open list menu
+		case 1: //////////////////////////////Open aeroflot
 		{
 			k = 0;
 			disp();
 			//показать
-			while (k != 3)
+			while (k != 5)
 			{
 				cin >> k;
 				switch (k)
@@ -51,19 +49,24 @@ void menu()
 					cls();
 					disp();
 
-					cls();
-					disp();
-
 					break;
 				case 2://///Remove element
 					cls();
 					disp();
 
+					break;
+
+				case 3:///Show all flights
 					cls();
 					disp();
 
 					break;
-				case 3:///To main menu
+				case 4:///Show flights flown by this type of plane
+					cls();
+					disp();
+
+					break;
+				case 5:///To main menu
 					cls();
 					men();
 
@@ -78,109 +81,16 @@ void menu()
 			}
 			break;
 		}
-		case 2: //////////////////////////////Open deck menu
-		{
-			k = 0;
-			disp();
-			//показать
-			while (k != 3)
-			{
-				cin >> k;
-				switch (k)
-				{
-				case 1:////Add element
-					cls();
-					disp();
-					cls();
-
-					cls();
-					disp();
-
-					break;
-				case 2://///Remove element
-					cls();
-					disp();
-					cls();
-
-					cls();
-					disp();
-
-					break;
-				case 3:///To main menu
-					cls();
-					men();
-
-					break;
-				default:
-					cls();
-					disp();
-
-					inc();
-					break;
-				}
-			}
-			break;
-		}
-		case 3://////////////////////////////Open steck menu
-		{
-			k = 0;
-			disp();
-			//показать
-			while (k != 3)
-			{
-				cin >> k;
-				switch (k)
-				{
-				case 1:////Add element
-					cls();
-					disp();
-
-					cls();
-					disp();
-
-					break;
-				case 2://///Remove element
-					cls();
-					disp();
-
-					cls();
-					disp();
-
-					break;
-				case 3:///To main menu
-					cls();
-					men();
-
-					break;
-				default:
-					cls();
-					disp();
-
-					inc();
-					break;
-				}
-			}
-			break;
-		}
-		case 4:
+		case 2: //////////////////////////////Output edited text from file
 		{
 			cls();
 			men();
-
-			imp();
 			break;
 		}
-		case 5:
+		case 3://////////////////////////////Exit
 		{
 			cls();
 			men();
-
-			exp();
-			break;
-		}
-		case 6:
-		{
-			cls();
 			break;
 		}
 		default:
@@ -197,12 +107,12 @@ void menu()
 
 void men()
 {
-	cout << "Menu:\n(1)List\n(2)Deck\n(3)Stack\n(4)Import file\n(5)Export file\n(6)Exit" << endl << endl;
+	cout << "Menu:\n(1)Aeroflot\n(2)Output text from file\n(3)Exit"<< endl;
 }
 
 void disp()
 {
-	cout << "(1)Add element\n(2)Remove element\n(3)Exit" << endl << endl;
+	cout << "(1)Add element\n(2)Remove element\n(3)Show all flights\n(4)Show flights flown by the type of plane\n(5)To menu" << endl << endl;
 }
 
 void cls()

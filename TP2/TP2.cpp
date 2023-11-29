@@ -1,4 +1,5 @@
-﻿
+﻿#include "KeeperA.h"
+#include "KeeperT.h"
 
 #include <list>
 #include <iostream>
@@ -16,6 +17,12 @@ void exp();
 
 int main(void)
 {
+	/*string fir = "bbbbbbbbbbb";
+	string sec = "baaaaaaaaaa";
+	if (fir > sec)
+		cout << fir;
+	else
+		cout << sec;*/
 	menu();
 	return 0;
 }
@@ -24,8 +31,13 @@ void menu()
 {
 	int choice = 0;
 	int k = 0;
+	int d = 0;
+	string filt;
 	cls();
-	//тут будет объект класса
+	KeeperA bob(0);
+	KeeperA aero(bob);
+	KeeperT texo(3);
+	filt = " ";
 	k = 0;
 	men();
 	//вывод в консоль
@@ -37,9 +49,11 @@ void menu()
 		{
 		case 1: //////////////////////////////Open aeroflot
 		{
+			aero.push_back();
 			k = 0;
+			cls();
 			disp();
-			//показать
+			aero.Show();
 			while (k != 5)
 			{
 				cin >> k;
@@ -48,23 +62,37 @@ void menu()
 				case 1:////Add element
 					cls();
 					disp();
-
+					aero.push_back();
+					cls();
+					disp();
+					aero.Show();
 					break;
 				case 2://///Remove element
 					cls();
 					disp();
-
+					cout << "What flight you'd like to remove?" << endl;
+					cin >> d;
+					aero.pop(d);
+					cls();
+					disp();
+					aero.Show();
 					break;
 
 				case 3:///Show all flights
 					cls();
 					disp();
-
+					aero.setfilt();
+					aero.Show();
 					break;
 				case 4:///Show flights flown by this type of plane
 					cls();
 					disp();
-
+					cout << "By what plane type would you like to filter the flights?" << endl;
+					cin >> filt;
+					aero.setfilt(filt);
+					cls();
+					disp();
+					aero.Show();
 					break;
 				case 5:///To main menu
 					cls();
@@ -85,6 +113,7 @@ void menu()
 		{
 			cls();
 			men();
+			texo.Show();
 			break;
 		}
 		case 3://////////////////////////////Exit
@@ -112,7 +141,7 @@ void men()
 
 void disp()
 {
-	cout << "(1)Add element\n(2)Remove element\n(3)Show all flights\n(4)Show flights flown by the type of plane\n(5)To menu" << endl << endl;
+	cout << "(1)Add element\n(2)Remove element\n(3)Show all flights\n(4)Filter by plane type\n(5)To menu" << endl << endl;
 }
 
 void cls()
